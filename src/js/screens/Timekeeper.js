@@ -36,7 +36,7 @@ class Timekeeper extends Component {
 
   getCurrentWeek() {
     return this.props.days.filter((day) => {
-      return moment(day.date).isBetween(moment().weekday(0), moment().weekday(7));
+      return moment(day.date).isBetween(moment().weekday(-1), moment().weekday(6));
     });
   }
 
@@ -90,11 +90,19 @@ class Timekeeper extends Component {
       tableNode = (
         <Table>
           <thead>
-            <tr>{ moment.weekdays().map(day => <th key={`weekday_${day}`}>{day}</th>)}</tr>
+            <tr>
+              { moment.weekdays().map(day => (
+                <th key={`weekday_${day}`} className={day === moment().format('dddd') && 'day-highlight'}>{day}</th>
+              ))}
+            </tr>
           </thead>
           <tbody>
             <TableRow>
-              {this.getCurrentWeek().map(day => <td key={`day_${day.id}`}>{day.time} hours</td>)}
+              {this.getCurrentWeek().map(day => (
+                <td key={`day_${day.id}`} className={moment(day.date).isSame(moment(), 'day') && 'day-highlight'}>
+                  {day.time} hours
+                </td>
+              ))}
             </TableRow>
           </tbody>
         </Table>

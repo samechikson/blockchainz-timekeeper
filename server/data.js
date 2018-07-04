@@ -106,104 +106,104 @@ export function getTask(id) {
 export function getDays() {
   return [{
     "id": 1,
-    "date": "2018-07-02 00:00:00 -0400",
-    "time": 5,
-    "name": "Arielle Sysland"
+    "date": "2018-07-01 00:00:00 -0400",
+    "time": 4,
+    "name": "Heidi Phillimore"
   }, {
     "id": 2,
-    "date": "2018-07-03 00:00:00 -0400",
-    "time": 6,
-    "name": "Dru Kimber"
+    "date": "2018-07-02 00:00:00 -0400",
+    "time": 9,
+    "name": "Bastien Hatley"
   }, {
     "id": 3,
-    "date": "2018-07-04 00:00:00 -0400",
-    "time": 10,
-    "name": "Dion Bettenay"
+    "date": "2018-07-03 00:00:00 -0400",
+    "time": 8,
+    "name": "Erminia Luetchford"
   }, {
     "id": 4,
-    "date": "2018-07-05 00:00:00 -0400",
+    "date": "2018-07-04 00:00:00 -0400",
     "time": 5,
-    "name": "Morlee Argabrite"
+    "name": "Lulu Pearde"
   }, {
     "id": 5,
-    "date": "2018-07-06 00:00:00 -0400",
-    "time": 6,
-    "name": "Audra Harrad"
+    "date": "2018-07-05 00:00:00 -0400",
+    "time": 8,
+    "name": "Bill Kliesl"
   }, {
     "id": 6,
-    "date": "2018-07-07 00:00:00 -0400",
-    "time": 4,
-    "name": "Editha Moncur"
+    "date": "2018-07-06 00:00:00 -0400",
+    "time": 7,
+    "name": "Karola Allderidge"
   }, {
     "id": 7,
-    "date": "2018-07-08 00:00:00 -0400",
-    "time": 6,
-    "name": "Russ Spiniello"
+    "date": "2018-07-07 00:00:00 -0400",
+    "time": 7,
+    "name": "Arv Heinemann"
   }, {
     "id": 8,
-    "date": "2018-07-09 00:00:00 -0400",
+    "date": "2018-07-08 00:00:00 -0400",
     "time": 10,
-    "name": "Brandea Sydenham"
+    "name": "Teresita Tour"
   }, {
     "id": 9,
-    "date": "2018-07-10 00:00:00 -0400",
-    "time": 9,
-    "name": "Bronson Coldrick"
+    "date": "2018-07-09 00:00:00 -0400",
+    "time": 4,
+    "name": "Myrvyn Burnsell"
   }, {
     "id": 10,
-    "date": "2018-07-11 00:00:00 -0400",
-    "time": 4,
-    "name": "Town Denisyuk"
+    "date": "2018-07-10 00:00:00 -0400",
+    "time": 5,
+    "name": "Marten Tonn"
   }, {
     "id": 11,
-    "date": "2018-07-12 00:00:00 -0400",
-    "time": 5,
-    "name": "Neal MacVean"
+    "date": "2018-07-11 00:00:00 -0400",
+    "time": 4,
+    "name": "Cully Flynn"
   }, {
     "id": 12,
-    "date": "2018-07-13 00:00:00 -0400",
-    "time": 8,
-    "name": "Meara Tomaszek"
+    "date": "2018-07-12 00:00:00 -0400",
+    "time": 6,
+    "name": "Correna Slocumb"
   }, {
     "id": 13,
-    "date": "2018-07-14 00:00:00 -0400",
-    "time": 4,
-    "name": "Trenna Smogur"
+    "date": "2018-07-13 00:00:00 -0400",
+    "time": 5,
+    "name": "Marjie Goble"
   }, {
     "id": 14,
-    "date": "2018-07-15 00:00:00 -0400",
-    "time": 9,
-    "name": "Gwynne Dudenie"
+    "date": "2018-07-14 00:00:00 -0400",
+    "time": 6,
+    "name": "Lucinda Dark"
   }, {
     "id": 15,
-    "date": "2018-07-16 00:00:00 -0400",
-    "time": 4,
-    "name": "Florencia Kearton"
+    "date": "2018-07-15 00:00:00 -0400",
+    "time": 10,
+    "name": "Thurstan Nesterov"
   }, {
     "id": 16,
-    "date": "2018-07-17 00:00:00 -0400",
-    "time": 7,
-    "name": "Orton Zambon"
+    "date": "2018-07-16 00:00:00 -0400",
+    "time": 5,
+    "name": "Kalina Dallosso"
   }, {
     "id": 17,
-    "date": "2018-07-18 00:00:00 -0400",
-    "time": 4,
-    "name": "Brewer Meadley"
+    "date": "2018-07-17 00:00:00 -0400",
+    "time": 5,
+    "name": "Samantha Ziemens"
   }, {
     "id": 18,
-    "date": "2018-07-19 00:00:00 -0400",
-    "time": 7,
-    "name": "Wendel Ducker"
+    "date": "2018-07-18 00:00:00 -0400",
+    "time": 10,
+    "name": "Helyn Jotcham"
   }, {
     "id": 19,
-    "date": "2018-07-20 00:00:00 -0400",
-    "time": 10,
-    "name": "Nollie Deshorts"
+    "date": "2018-07-19 00:00:00 -0400",
+    "time": 5,
+    "name": "Mariska Smye"
   }, {
     "id": 20,
-    "date": "2018-07-21 00:00:00 -0400",
+    "date": "2018-07-20 00:00:00 -0400",
     "time": 6,
-    "name": "Elnar Keady"
+    "name": "Dorothea Woodes"
   }];
 }
 
