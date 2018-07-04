@@ -41,10 +41,8 @@ class Timekeeper extends Component {
   }
 
   render() {
-    console.log('in render', this.props);
     const { error, days } = this.props;
     // const { intl } = this.context;
-    console.log('current week', this.getCurrentWeek());
 
     let errorNode;
     let tableNode;
@@ -117,6 +115,7 @@ class Timekeeper extends Component {
         <Box pad='medium'>
           <Heading tag='h3' strong={true}>
             Current Week
+            <Label style={{ 'margin-left': '10px' }}>({moment().weekday(0).format('dddd, MMMM Do YYYY')} - {moment().weekday(7).format('dddd, MMMM Do YYYY')})</Label>
           </Heading>
         </Box>
         {tableNode}
@@ -128,20 +127,18 @@ class Timekeeper extends Component {
 Timekeeper.defaultProps = {
   error: undefined,
   days: [],
-  currentWeek: []
 };
 
 Timekeeper.propTypes = {
   dispatch: PropTypes.func.isRequired,
   error: PropTypes.object,
   days: PropTypes.arrayOf(PropTypes.object),
-  currentWeek: PropTypes.arrayOf(PropTypes.object)
 };
 
 Timekeeper.contextTypes = {
   intl: PropTypes.object
 };
 
-const select = (state) => { console.log('state', state); return ({ ...state.timekeeper }); };
+const select = state => ({ ...state.timekeeper });
 
 export default connect(select)(Timekeeper);
