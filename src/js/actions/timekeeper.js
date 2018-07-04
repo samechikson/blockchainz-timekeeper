@@ -12,6 +12,5 @@ export function loadTimekeeper() {
 }
 
 export function unloadTimekeeper() {
-  // unwatchDashboard();
   return { type: TIMEKEEPER_UNLOAD };
 }

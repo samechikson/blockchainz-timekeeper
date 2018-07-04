@@ -34,7 +34,7 @@ class Login extends Component {
     const { dispatch } = this.props;
     const { router } = this.context;
     dispatch(login(fields.username, fields.password, () => (
-      router.history.push('/dashboard')
+      router.history.push('/timekeeper')
     )));
   }
 

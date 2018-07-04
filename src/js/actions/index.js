@@ -5,10 +5,6 @@ export const SESSION_LOAD = 'SESSION_LOAD';
 export const SESSION_LOGIN = 'SESSION_LOGIN';
 export const SESSION_LOGOUT = 'SESSION_LOGOUT';
 
-// Dashboard
-export const DASHBOARD_LOAD = 'DASHBOARD_LOAD';
-export const DASHBOARD_UNLOAD = 'DASHBOARD_UNLOAD';
-
 // Tasks
 export const TASKS_LOAD = 'TASKS_LOAD';
 export const TASKS_UNLOAD = 'TASKS_UNLOAD';
