@@ -2,19 +2,17 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import Anchor from 'grommet/components/Anchor';
 import Article from 'grommet/components/Article';
+import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import Label from 'grommet/components/Label';
-import Tiles from 'grommet/components/Tiles';
-import Tile from 'grommet/components/Tile';
 import Notification from 'grommet/components/Notification';
 import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
-import Meter from 'grommet/components/Meter';
 import Spinning from 'grommet/components/icons/Spinning';
+import Add from 'grommet/components/icons/base/Add';
 // import { getMessage } from 'grommet/utils/Intl';
 
 import NavControl from '../components/NavControl';
@@ -124,6 +122,7 @@ class Timekeeper extends Component {
           <Heading tag='h3' strong={true}>
             Current Week
             <Label style={{ 'margin-left': '10px' }}>({moment().weekday(0).format('dddd, MMMM Do YYYY')} - {moment().weekday(7).format('dddd, MMMM Do YYYY')})</Label>
+            <Button primary={true} icon={<Add />} style={{ float: 'right' }} href='#' />
           </Heading>
         </Box>
         {tableNode}

@@ -7,9 +7,11 @@ import Footer from 'grommet/components/Footer';
 import Title from 'grommet/components/Title';
 import Menu from 'grommet/components/Menu';
 import Button from 'grommet/components/Button';
+import Box from 'grommet/components/Box';
 import CloseIcon from 'grommet/components/icons/base/Close';
 import Logo from 'grommet/components/icons/Grommet';
 import Anchor from 'grommet/components/Anchor';
+import Select from 'grommet/components/Select';
 
 import SessionMenu from './SessionMenu';
 import { navActivate } from '../actions/nav';
@@ -31,6 +33,8 @@ class NavSidebar extends Component {
       <Anchor key={page.label} path={page.path} label={page.label} />
     ));
 
+    const platforms = [{ value: 'hyperledge', label: 'HyperLedger' }, { value: 'ethereum', label: 'Ethereum' }];
+
     return (
       <Sidebar colorIndex='neutral-3' fixed={true}>
         <Header size='large' justify='between' pad={{ horizontal: 'medium' }}>
@@ -45,6 +49,9 @@ class NavSidebar extends Component {
             a11yTitle='Close Menu'
           />
         </Header>
+        <Box pad='medium' style={{ background: 'white' }}>
+          <Select placeHolder='Choose platform' options={platforms} />
+        </Box>
         <Menu fill={true} primary={true}>
           {links}
         </Menu>
