@@ -1,4 +1,4 @@
-import { TIMEKEEPER_LOAD, TIMEKEEPER_UNLOAD } from '../actions';
+import { TIMEKEEPER_LOAD, TIMEKEEPER_UNLOAD, TIMEKEEPER_ADD_TIME_OPEN, TIMEKEEPER_ADD_TIME_CLOSE } from '../actions';
 import { getTime } from '../api/timekeeper';
 
 export function loadTimekeeper() {
@@ -13,4 +13,12 @@ export function loadTimekeeper() {
 
 export function unloadTimekeeper() {
   return { type: TIMEKEEPER_UNLOAD };
+}
+
+export function openAddTime() {
+  return { type: TIMEKEEPER_ADD_TIME_OPEN };
+}
+
+export function closeAddTime(newData) {
+  return { type: TIMEKEEPER_ADD_TIME_CLOSE, payload: newData };
 }

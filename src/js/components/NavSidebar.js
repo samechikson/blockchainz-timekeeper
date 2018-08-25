@@ -50,7 +50,7 @@ class NavSidebar extends Component {
           />
         </Header>
         <Box pad='medium' style={{ background: 'white' }}>
-          <Select placeHolder='Choose platform' options={platforms} />
+          <Select placeHolder='Choose platform' options={platforms} value='Ethereum' />
         </Box>
         <Menu fill={true} primary={true}>
           {links}

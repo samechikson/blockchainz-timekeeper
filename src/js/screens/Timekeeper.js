@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import Article from 'grommet/components/Article';
+import Layer from 'grommet/components/Layer';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Header from 'grommet/components/Header';
@@ -17,10 +18,11 @@ import Add from 'grommet/components/icons/base/Add';
 
 import NavControl from '../components/NavControl';
 import {
-  loadTimekeeper, unloadTimekeeper
+  loadTimekeeper, unloadTimekeeper, openAddTime, closeAddTime
 } from '../actions/timekeeper';
 
 import { pageLoaded } from './utils';
+import AddTime from './AddTime';
 
 class Timekeeper extends Component {
   componentDidMount() {
@@ -33,9 +35,17 @@ class Timekeeper extends Component {
   }
 
   getCurrentWeek() {
-    return this.props.days.filter((day) => {
-      return moment(day.date).isBetween(moment().weekday(-1), moment().weekday(6));
-    });
+    return this.props.days.filter(day => (
+      moment(day.date).isBetween(moment().weekday(-1), moment().weekday(6))
+    ));
+  }
+
+  openModal() {
+    this.props.dispatch(openAddTime());
+  }
+
+  closeModal() {
+    this.props.dispatch(closeAddTime());
   }
 
   render() {
@@ -64,27 +74,6 @@ class Timekeeper extends Component {
         </Box>
       );
     } else {
-      // const tasksNode = (days || []).map(day => (
-      //   <Tile
-      //     key={`task_${day.id}`}
-      //     justify='between'
-      //   >
-      //     <Label><Anchor path={`/tasks/${day.id}`} label={moment(day.date).format('ddd')} /></Label>
-      //     <Box
-      //       direction='row'
-      //       responsive={false}
-      //       pad={{ between: 'small' }}
-      //     >
-      //       <Meter value={(day.time / 8) * 100} type='arc' />
-      //     </Box>
-      //   </Tile>
-      // ));
-
-      // listNode = (
-      //   <Tiles>
-      //     {tasksNode}
-      //   </Tiles>
-      // );
       tableNode = (
         <Table>
           <thead>
@@ -107,6 +96,13 @@ class Timekeeper extends Component {
       );
     }
 
+    let layer;
+    if (this.props.showAddModal) {
+      layer = (<Layer>
+        <AddTime />
+      </Layer>);
+    }
+
     return (
       <Article primary={true}>
         <Header
@@ -121,11 +117,13 @@ class Timekeeper extends Component {
         <Box pad='medium'>
           <Heading tag='h3' strong={true}>
             Current Week
-            <Label style={{ 'margin-left': '10px' }}>({moment().weekday(0).format('dddd, MMMM Do YYYY')} - {moment().weekday(7).format('dddd, MMMM Do YYYY')})</Label>
-            <Button primary={true} icon={<Add />} style={{ float: 'right' }} href='#' />
+            <Label>({moment().weekday(0).format('dddd, MMMM Do YYYY')} - {moment().weekday(7).format('dddd, MMMM Do YYYY')})</Label>
+            <Button primary={true} icon={<Add />} style={{ float: 'right' }} href='#' onClick={() => this.openModal()} />
           </Heading>
         </Box>
         {tableNode}
+        {layer}
+        {JSON.stringify(this.props.newData)}
       </Article>
     );
   }
@@ -134,12 +132,19 @@ class Timekeeper extends Component {
 Timekeeper.defaultProps = {
   error: undefined,
   days: [],
+  showAddModal: false,
+  newData: {}
 };
 
 Timekeeper.propTypes = {
   dispatch: PropTypes.func.isRequired,
   error: PropTypes.object,
   days: PropTypes.arrayOf(PropTypes.object),
+  showAddModal: PropTypes.bool,
+  newData: {
+    date: PropTypes.date,
+    hours: PropTypes.number
+  }
 };
 
 Timekeeper.contextTypes = {
